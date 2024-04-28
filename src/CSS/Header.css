@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.spantext {
+    font-size: 1vw;
+}
+.nav_link{
+    text-decoration: none;
+    color: #504e4e;
+    border: none;
+    background: none;
+}
+
+.nav_link:hover {
+    color: rgb(66, 152, 66);
+
+}
+
+.nav-btn{
+    padding: 3px;
+    border: none;
+    background: none;
+    
+}
+
+.nav-bot-link {
+    margin-left: 30px;
+    display: flex;
+}
+
+.custom-bg-color {
+    color: #000;
+}
+
+
+
+

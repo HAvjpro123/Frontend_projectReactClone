@@ -1,0 +1,20 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card-info {
+    bottom: -3rem;
+    opacity: 0;
+    transition: opacity 0.5s ;
+}
+
+.card-item:hover .card-info {
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .1s;
+}
+
+.card-item:hover {
+   border: 0.5px solid #a29d9d;
+}

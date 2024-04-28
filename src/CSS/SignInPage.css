@@ -1,0 +1,7 @@
+.signinpageImg {
+    background-image: url("../assets/imgs/banner3.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
