@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import '../../CSS/Header.css'
@@ -12,32 +12,37 @@ import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
-      right: -4,
-      top: 2,
+      right: -5,
+      top: -1,
       border: `1px solid ${theme.palette.background.paper}`,
       
       fontSize: 10
     },
   }));
 
-export class HeaderComponent extends Component {
-    render() {
+const HeaderComponent = () => {
+   
+        const navigate = useNavigate()
+        const handleNavigateLogin = () => {
+            navigate("/sign-in")
+        }
         return (
             <>
-                <div className="">
+                <div >
                     <div>
                         <nav className="grid grid-cols-12 " id="myDiv">
-                            <div class="col-span-1"
+                            <div className="col-span-1"
                             ></div>
-                            <div class="col-span-2 my-auto inline-block ">
+                            <div className="col-span-2 my-auto inline-block ">
                                 <span className="nav_link nav-btn spantext" type="button"><LocationOnIcon className='mb-1' sx={{ fontSize: 20 }}></LocationOnIcon></span>
                                 <span className="nav_link nav-btn font-bold spantext" type="button"><PhoneInTalkIcon className='mb-1' sx={{ fontSize: 20 }}></PhoneInTalkIcon>1900 8000</span>
                             </div>
 
-                            <div class="col-span-6 mx-auto">
+                            <div className="col-span-6 mx-auto">
                                 <img
                                     src={logo}
                                     width="85"
@@ -47,15 +52,15 @@ export class HeaderComponent extends Component {
 
                             </div>
 
-                            <div class="col-span-2 my-auto text-right">
+                            <div className="col-span-2 my-auto text-right">
                                 <span className="nav_link nav-btn spantext mr-2" type="button">
                                     <StyledBadge badgeContent={1} color="success" max={999} >
                                         <ShoppingCartIcon className='mb-1' sx={{ fontSize: 20 }}/>
                                     </StyledBadge></span>
 
-                                <span className="nav_link nav-btn spantext" type="button"><PersonIcon className='mb-1' sx={{ fontSize: 20 }} />Đăng nhập</span>
+                                <span onClick={handleNavigateLogin} style={{cursor: 'pointer'}} className="nav_link nav-btn spantext" type="button"><PersonIcon className='mb-1' sx={{ fontSize: 20 }} />Đăng nhập</span>
                             </div>
-                            <div class="col-span-1"
+                            <div className="col-span-1"
                             ></div>
                         </nav>
 
@@ -112,22 +117,8 @@ export class HeaderComponent extends Component {
 
             </>
         )
-    }
+    
 }
 
 export default HeaderComponent
 
-window.addEventListener('scroll', function() {
-    var myDiv = document.getElementById('myDiv');
-    var myDiv1 = document.getElementById('myDiv1');
-  
-    var scrollPosition = window.scrollY;
-  
-    if (scrollPosition > 200) { // Khoảng cách từ đỉnh trang để thẻ div biến mất
-      myDiv.classList.add('hide');
-      myDiv1.classList.add('fixed-top');
-    } else {
-      myDiv.classList.remove('hide');
-      myDiv1.classList.remove('fixed-top');
-    }
-  });

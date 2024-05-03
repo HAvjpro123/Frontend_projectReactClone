@@ -5,7 +5,7 @@ const NavbarComponent = () => {
         switch (type) {
             case 'text':
                 return options.map((option) => {
-                    return <p className='px-4 border-l-4 border-gray-100'>{option}</p>
+                    return <div  key={option}><p className='px-4 border-l-4 border-gray-100'>{option}</p></div> 
                 })
             default: 
                 return {}

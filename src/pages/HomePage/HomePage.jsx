@@ -31,11 +31,11 @@ const HomePage = () => {
       {/* typeproduct */}
       <div className='' >
         {/* <div class="col-span-1 bg-stone-100  "></div> */}
-        <div class=" bg-gradient-to-r from-green-400 to-green-600">
+        <div className=" bg-gradient-to-r from-green-400 to-green-600">
           <div className='flex'>
             {arr.map((item) => {
               return (
-                <div className='mx-2'>
+                <div key={item} className='mx-2'>
                   <TypeProduct name={item} key={item} />
                 </div>
               )
@@ -47,7 +47,7 @@ const HomePage = () => {
       {/* homepage */}
       <div className='' >
         {/* <div class="col-span-1 bg-stone-100 "></div> */}
-        <div class="">
+        <div >
           <div className=''>
             {/*---Carousel---*/}
             <Carousel data-bs-theme="dark" >
@@ -96,7 +96,7 @@ const HomePage = () => {
       {/* cardproduct */}
       <div className='' >
         {/* <div class="col-span-1 "></div> */}
-        <div class=" ">
+        <div >
           <div className='flex border-b border-stone-300'>
             <div className='py-2 mx-3 border-b-2 border-green-700'>
               <span className='px-1 text-xl'>SẢN PHẨM MỚI</span>
