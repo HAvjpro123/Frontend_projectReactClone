@@ -50,6 +50,13 @@ const SignInPage = () => {
                   onChange={handleOnchangeEmail}
                 />
               </Form.Group>
+              <Form.Control
+                  type="account"
+                  placeholder="Nhập tên đăng nhập..."
+                  className='rounded-0'
+                  value={email}
+                  onChange={handleOnchangeEmail}
+                />
 
               <Form.Label htmlFor="inputPassword5">Mật khẩu</Form.Label>
               <InputForm
