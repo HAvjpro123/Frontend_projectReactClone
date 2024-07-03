@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .card-info {
     bottom: -3rem;
     opacity: 0;

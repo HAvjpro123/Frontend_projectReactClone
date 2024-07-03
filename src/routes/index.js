@@ -1,13 +1,15 @@
 
 
-import ProductDetalPage from "../Components/ProductDetailPage/ProductDetailPage"
-import SignInPage from "../Components/SignInPage/SignInPage"
-import SignUpPage from "../Components/SignUpPage/SignUpPage"
+import ProductDetalPage from "../pages/ProductDetailPage/ProductDetailPage"
+import SignInPage from "../pages/SignInPage/SignInPage"
+import SignUpPage from "../pages/SignUpPage/SignUpPage"
 import TypeProductPage from "../Components/TypeProductPage/TypeProductPage"
 import HomePage from "../pages/HomePage/HomePage"
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage"
 import OrderPage from "../pages/OrderPage/OrderPage"
 import ProductPage from "../pages/ProductPage/ProductPage"
+import ProfilePage from "../pages/Profile/ProfilePage"
+import AdminPage from "../pages/AdminPage/AdminPage"
 
 export const routes = [
     {
@@ -51,6 +53,18 @@ export const routes = [
         page: ProductDetalPage,
         isShowHeader: true
 
+    },
+    {
+        path: '/profile-user',
+        page: ProfilePage,
+        isShowHeader: true
+
+    },
+    {
+        path: '/system/admin',
+        page: AdminPage,
+        isShowHeader: false,
+        isPrivate: true
     },
     {
         path: '*',

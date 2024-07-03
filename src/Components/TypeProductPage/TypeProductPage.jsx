@@ -6,6 +6,13 @@ import './TypeProductP'
 import Typography from '@mui/material/Typography';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import * as ProductService from '../../service/ProductService'
+
+
+import '../../CSS/HomePage.css'
+//material
+
+import { useQuery } from '@tanstack/react-query';
 
 
 const TypeProductPage = () => {
@@ -25,12 +32,17 @@ const TypeProductPage = () => {
             cardlist.classList.remove('col-span-9');
         }
     });
-
+    const fetchProductAll = async () => {
+        const res = await ProductService.getAllProduct()
+        console.log("ressss", res)
+        return res
+      }
     const [page, setPage] = React.useState(1);
     const onChange = (event, value) => {
         setPage(value);
     };
-
+    const { isLoading, data: products } = useQuery({ queryKey: ['products'], queryFn: fetchProductAll, retry: 3, retryDelay: 1000 })
+    console.log("data", products)
 
 
     return (
@@ -42,11 +54,24 @@ const TypeProductPage = () => {
                     </div>
                 </div>
                 <div class=" col-span-9" id='cardlist'>
-                    <div className='px-2 flex flex-wrap gap-2 justify-normal'>
-                        <CardComponent />
-                        <CardComponent />
-                        <CardComponent />
-                        <CardComponent />
+                    <div className='flex flex-wrap justify-normal'>
+                        {products?.data?.map((product) => {
+                            return (
+                                <CardComponent
+                                    key={product._id}
+                                    countInStock={product.countInStock}
+                                    description={product.description}
+                                    image={product.image}
+                                    name={product.name}
+                                    price={product.price}
+                                    rating={product.rating}
+                                    type={product.type}
+                                    typeRoom={product.typeRoom}
+                                    selled={product.selled}
+                                    discount={product.discount}
+                                />
+                            )
+                        })}
                     </div>
                     <div >
                         <Stack spacing={2} >

@@ -3,16 +3,16 @@ import { Form } from 'react-bootstrap';
 const InputForm = (props) => {
     const { placeholder = 'nhập text', ...rest } = props
     const handleOnchangeInput = (e) => {
-        props.handleOnchange(e.target.value)
+        props.onChange(e.target.value)
     }
     return (
         <Form.Control
-            type=""
+            type="input"
             placeholder={placeholder}
             className='rounded-0'
+            value={props.value}
+             {...rest}
             onChange={handleOnchangeInput}
-            valuet={props.value}
-            {...rest}
         />
 
     )

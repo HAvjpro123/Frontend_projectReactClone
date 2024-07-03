@@ -24,8 +24,6 @@ const ProductDetailComponent = () => {
                         <Col span={6}><Image src={banner2} alt="small img" /></Col>
                         <Col span={6}><Image src={banner2} alt="small img" /></Col>
                     </Row>
-
-
                 </Col >
                 <Col xs={24} md={16} className='p-3'>
                     <p className='text-2xl '>Product detail name </p>
